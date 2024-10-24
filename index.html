@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Anyelo Bustos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container" id="cv-content">
+        <header>
+            <div class="header-content">
+                <h1>Anyelo Bustos</h1>
+                <p class="position">Analista Programador</p>
+                <p class="contact">📞 +56 9 4972 8928 | 📧 <a href="mailto:sen.programador@gmail.com">sen.programador@gmail.com</a></p>
+            </div>
+             <!-- Botón en la esquina superior derecha -->
+            <div style="position: absolute; top: 20px; right: 20px;">
+                <button id="download-btn" onclick="downloadPDF()">📥 Descargar PDF</button>
+            </div>
+</header>
+        </header>
+
+        <main>
+            <section class="profile">
+                <h2>📄 Perfil</h2>
+                <p>Soy Analista Programador titulado y especializado en aplicaciones web, móviles y de escritorio. Cuento con experiencia en diversas plataformas y tecnologías, mejorando mis habilidades continuamente para ser un desarrollador full stack destacado.</p>
+            </section>
+
+            <section class="education">
+                <h2>🎓 Educación</h2>
+                <ul>
+                    <li><strong>ESUCOMEX:</strong> Técnico de Nivel Superior en Análisis y Programación de Aplicaciones Móviles y Web (Titulado)</li>
+                    <li><strong>AIEP:</strong> Técnico de Nivel Superior en Entrenamiento Personal (Titulado)</li>
+                    <li><strong>Colegio Nuestra Señora del Rosario</strong>, Las Condes, Chile</li>
+                </ul>
+            </section>
+
+            <section class="experience">
+                <h2>💼 Experiencia</h2>
+                <ul>
+                    <li><strong>San Jorge Packaging:</strong> Asistente Desarrollo Informático (Ago 2024 - 22 Nov 2024)<br>
+                        <em>Visual Basic .NET, SQL Server, Aplicaciones de Escritorio</em></li>
+                    <li><strong>Freelancer:</strong> Desarrollador Web (Nov 2023 - Jun 2024)<br>
+                        <em>PHP, Laravel, Tailwind CSS, Bootstrap, Node.js, MySQL, XAMPP, HTML, CSS, JS, AJAX, jQuery</em></li>
+                    <li><strong>ITPS Gestión:</strong> Analista Programador Junior (Ene - Jun 2023)<br>
+                        <em>C#, Angular, Node.js, SQL Server</em></li>
+                    <li><strong>WOM Chile:</strong> Práctica Profesional - Analista Programador (2022)<br>
+                        <em>PHP, HTML, CSS, Bootstrap, SQL Server, MySQL, Power BI, Oracle</em></li>
+                </ul>
+            </section>
+
+            <section class="certifications">
+                <h2>📚 Cursos y Certificaciones</h2>
+                <ul>
+                    <li>Frontend Web Developer (Udemy)</li>
+                    <li>Cómo crear un sitio web para restaurantes en PHP y MySQL (Udemy)</li>
+                    <li>Full Stack Java (Coding Dojo)</li>
+                    <li>Diplomado en Soporte en Hardware y Redes (ESUCOMEX)</li>
+                    <li>Curso de jQuery y AJAX desde Cero (Udemy)</li>
+                    <li>Soporte Técnico a Computadoras en Entornos Corporativos (Udemy)</li>
+                    <li>Diplomado en Análisis y Programación en Base de Datos (ESUCOMEX)</li>
+                </ul>
+            </section>
+
+            <section class="references">
+                <h2>👥 Referencias</h2>
+                <p>Pedro Vasquez - Desarrollador Senior - 📞 +56 9 75386428</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>🌐 <a href="https://github.com/daisersenpro" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/anyelo-b-84ab65147/" target="_blank">LinkedIn</a></p>
+        </footer>
+    </div>
+
+   
+
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+
+            html2canvas(document.getElementById('cv-content')).then((canvas) => {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let position = 0;
+
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                pdf.save('Curriculum_Anyelo_Bustos.pdf');
+            });
+        }
+    </script>
+</body>
+</html>

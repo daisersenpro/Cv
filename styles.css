@@ -1,0 +1,98 @@
+/* Estilo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+}
+/* Header */
+header {
+    text-align: center;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+header .position {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+header .contact a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+header .contact a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #1d4ed8;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* Botón de descarga */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#download-btn {
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#download-btn:hover {
+    background-color: #2563eb;
+}
